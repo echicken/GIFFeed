@@ -17,7 +17,6 @@ var GIFFeed = function(options) {
 	var settings = {
 		'feedURL' : 'http://www.reddit.com/r/gifs/.json',
 		'limit' : 100,
-		'frequency' : 1800000,
 		'seen' : []
 	};
 
