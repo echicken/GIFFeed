@@ -3,6 +3,8 @@ GIFFeed
 
 A node.js module that loads all GIFs from a Reddit JSON feed.
 
+Makes use of the very useful *omggif* (https://github.com/deanm/omggif) to generate some helpful metadata about retrieved GIFs.
+
 ####Installation:
 
 ```sh
