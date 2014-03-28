@@ -56,6 +56,8 @@ var feed = new GIFFeed(
 );
 ```
 
+The argument-object is optional, as are all of its properties.  The defaults are shown above.
+
 #####Methods:
 
 * *load()* - Loads a feed of 'limit' posts from 'feedURL', fires off a GIF event for each *new* GIF that is encountered in the feed.
