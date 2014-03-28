@@ -1,0 +1,21 @@
+{	"name" : "GIFFeed",
+	"version" : "0.0.1",
+	"author" : "echicken <echicken@electronicchicken.com>",
+	"description" : "A node.js module that loads all GIFs from a Reddit JSON feed.",
+	"contributors" : [
+		{	"name" : "echicken",
+			"email" : "echicken@electronicchicken.com"
+		}
+	],
+	"main" : "index.js",
+	"repository" : {
+		"type" : "git",
+		"url" : "https://github.com/echicken/GIFFeed.git"
+	},
+	"dependencies" : {
+		"omggif" : "git://github.com/deanm/omggif.git"
+	},
+	"engines" : {
+		"node" : ">= 0.10.24"
+	}
+}
