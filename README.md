@@ -17,7 +17,11 @@ or add:
 "GIFFeed" : "git://github.com/echicken/GIFFeed.git"
 ```
 
-to your project's *package.json* file's *dependencies* section.
+to your project's *package.json* file's *dependencies* section and run:
+
+```sh
+npm install
+```
 
 ####Usage example:
 
