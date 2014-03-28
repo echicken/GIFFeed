@@ -7,7 +7,7 @@
 			"email" : "echicken@electronicchicken.com"
 		}
 	],
-	"main" : "index.js",
+	"main" : "GIFFeed.js",
 	"repository" : {
 		"type" : "git",
 		"url" : "https://github.com/echicken/GIFFeed.git"
