@@ -116,3 +116,4 @@ var feed = new GIFFeed(
 * The *gif* property is a Buffer containing the actual GIF.
 * The *duration* property is the calculated length of one loop of the animated GIF, in milliseconds.
 * The *id* property is (I believe) a unique ID for the Reddit posting that this GIF was loaded from.  (You can supply an array of these strings as the *seen* argument when instantiating your GIFFeed object to prevent it from firing off GIF events for images you already know about.)
+* The rest of the properties are self-explanatory, though in some cases that may depend on your familiarity with Reddit's terminology.
