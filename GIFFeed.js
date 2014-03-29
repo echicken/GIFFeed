@@ -80,7 +80,7 @@ var GIFFeed = function(options) {
 				return;
 			if(u.pathname.substr(-4, 4).toLowerCase() != ".gif")
 				return;
-			if(settings.seen.indexOf(item.id) < 0)
+			if(settings.seen.indexOf(item.data.id) < 0)
 				cacheItem(item.data);
 		}
 		
@@ -103,20 +103,8 @@ var GIFFeed = function(options) {
 	}
 
 	var init = function(options) {
-		for(var o in options) {
-			if(typeof settings[o] == typeof options[o]) {
-				settings[o] = options[o];
-			} else {
-				self.emit(
-					"error",
-					util.format(
-						"GIFFeed error: %s must be %s.",
-						o,
-						typeof settings[o]
-					)
-				);
-			}
-		}
+		for(var o in options)
+			settings[o] = options[o];
 	}
 
 	init(options);
