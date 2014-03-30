@@ -67,6 +67,11 @@ var GIFFeed = function(options) {
 						}
 					);
 				}
+			).on(
+				"error",
+				function(err) {
+					self.emit("error", err);
+				}
 			);
 		}	
 		
