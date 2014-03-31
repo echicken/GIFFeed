@@ -17,7 +17,8 @@ var GIFFeed = function(options) {
 	var settings = {
 		'feedURL' : 'http://www.reddit.com/r/gifs/.json',
 		'limit' : 100,
-		'seen' : []
+		'seen' : [],
+		'nsfw' : true
 	};
 
 	this.load = function() {
@@ -42,6 +43,30 @@ var GIFFeed = function(options) {
 				return false;
 			}
 		}
+
+		var notNullAndMatch = function(haystack, needle) { // PHP Cheese
+			if(	typeof haystack == "string"
+				&&
+				haystack.toLowerCase().indexOf(needle.toLowerCase()) >= 0
+			) {
+				return true;
+			}
+			return false;
+		}
+
+		var filterItem = function(item) {
+			if(!settings.nsfw && item.over_18)
+				return true;
+			if(notNullAndMatch(item.selftext, 'nsfw'))
+				return true;
+			if(notNullAndMatch(item.link_flair_text, 'nsfw'))
+				return true;
+			if(notNullAndMatch(item.author_flair_text, 'nsfw'))
+				return true;
+			if(notNullAndMatch(item.title, 'nsfw'))
+				return true;
+			return false;
+		}
 		
 		var cacheItem = function(item) {
 	
@@ -62,7 +87,8 @@ var GIFFeed = function(options) {
 							item = expandMetadata(item);
 							if(!item)
 								return;
-							self.emit("GIF", item);
+							if(!filterItem(item))
+								self.emit("GIF", item);
 							settings.seen.push[item.id];
 						}
 					);
