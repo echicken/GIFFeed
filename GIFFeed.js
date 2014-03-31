@@ -15,7 +15,7 @@ var GIFFeed = function(options) {
 	events.EventEmitter.call(this);
 
 	var settings = {
-		'feedURL' : 'http://www.reddit.com/r/gifs/.json',
+		'subReddit' : '/r/gifs',
 		'limit' : 100,
 		'seen' : [],
 		'nsfw' : true
@@ -127,7 +127,16 @@ var GIFFeed = function(options) {
 		}
 	
 		http.get(
-			util.format("%s?limit=%s", settings.feedURL, settings.limit),
+			{	'hostname' : "www.reddit.com",
+				'path' : util.format(
+					"%s/.json?limit=%s",
+					settings.subReddit,
+					settings.limit
+				),
+				'headers' : {
+					'User-Agent' : 'GIFFeed/1.0 by echicken'
+				}
+			},
 			handleResponse
 		);
 
