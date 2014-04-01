@@ -34,7 +34,7 @@ var GIFFeed = function(options) {
 				item.duration = 0; // In milliseconds
 				for(var f = 0; f < item.frames; f++) {
 					item.duration += (
-						(Number(decoded.frameInfo(f).delay) * 10) || 1
+						(Number(decoded.frameInfo(f).delay) * 10) || 1000
 					);
 				}
 				return item;
